@@ -18,14 +18,15 @@ def convert(lines):
 		elif line == 'Tom':
 			person = 'Tom';
 			continue;
-		new.append(person + ': ' + line)
+		if person:
+			new.append(person + ': ' + line )
 	print(new)
 	return new;
 	
 def write_file(file, new_lines):
 	with open(file, 'w', encoding = 'utf-8') as f:
 		for p in new_lines:
-			f.write(p);
+			f.write(p + '\n');
 
 def main():
 	file_name = 'input.txt';
